@@ -49,7 +49,7 @@ _k9s() {
 }
 FUNC
 
-for theme in $("${K9S_THEME_GEN}/yq" e '.schemes.[] | anchor' "${_ALACRITTY_YML}"); do
+for theme in $("${_YQ_PATH}" e '.schemes.[] | anchor' "${_ALACRITTY_YML}"); do
   k9s_func_name="k9s_${theme}"
   echo "alias $k9s_func_name=\"_k9s $theme\""
 done
